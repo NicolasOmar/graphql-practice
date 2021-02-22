@@ -1,0 +1,28 @@
+{
+  "name": "graphql-practice",
+  "version": "0.0.0",
+  "author": "Nicolás Omar González Passerino",
+  "license": "MIT",
+  "private": false,
+  "description": "Repository created to record my practice learning GraphQL",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasOmar/graphql-practice.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NicolasOmar/graphql-practice/issues"
+  },
+  "homepage": "https://github.com/NicolasOmar/graphql-practice#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "husky": "^5.1.1",
+    "prompts": "^2.4.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run update-version"
+    }
+  }
+}
