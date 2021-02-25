@@ -4,12 +4,12 @@ Repository created to record my practice learning GraphQL with exercises based o
 ## Requirements
  - [Node](https://nodejs.org/en/download/) v12.16.1 or above
 
-## Version (currently v0.0.0)
+## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
 | --- | --- |
-| 0 | Course hasn't been completed |
-| 0 | How many assignments/examples I have completed |
-| 0 | How many times I have updated the next assignment/example |
+| 0.X.X | Course hasn't been completed |
+| X.0.X | How many assignments/examples I have completed |
+| X.X.0 | How many times I have updated the next assignment/example |
 
 ## Other Practice Repos
 | Node | React | Angular |
