@@ -1,4 +1,5 @@
 import { GraphQLServer } from 'graphql-yoga'
+import { v4 as uuidv4 } from 'uuid'
 import { comments, posts, users } from './data'
 
 // Type definitions
@@ -9,6 +10,31 @@ const typeDefs = `
     getAllUsers: [User!]!
     getPosts(term: String): [Post]!
     getAllComments: [Comment!]!
+  }
+
+  type Mutation {
+    createUser(user: CreateUserInput): User!
+    createPost(post: CreatePostInput): Post!
+    createComment(comment: CreateCommentInput): Comment!
+  }
+
+  input CreateUserInput {
+    name: String!
+    email: String!
+    role: String
+  }
+
+  input CreatePostInput {
+    title: String!
+    body: String!
+    published: Boolean!
+    author: ID!
+  }
+
+  input CreateCommentInput {
+    text: String!
+    author: ID!
+    post: ID!
   }
 
   type User {
@@ -49,6 +75,64 @@ const resolvers = {
         : posts
     },
     getAllComments: () => [...comments]
+  },
+  Mutation: {
+    createUser: (parent, args) => {
+      const emailTaken = users.some(({ email }) => email === args.email)
+
+      if (emailTaken) {
+        throw new Error('The Email has been taken')
+      } else {
+        const newUser = {
+          id: uuidv4(),
+          name: args.name,
+          email: args.email,
+          age: args.age
+        }
+
+        users.push(newUser)
+        return newUser
+      }
+    },
+    createPost:(parent, args) => {
+      const userExists = users.some(({ id }) => id === args.author)
+
+      if (userExists) {
+        const newPost = {
+          id: uuidv4(),
+          title: args.title,
+          body: args.body,
+          published: args.published,
+          author: args.author
+        }
+
+        posts.push(newPost)
+
+        return newPost
+      } else {
+        throw new Error('User not found')
+      }
+    },
+    createComment:(
+      parent,
+      { text, author,post }
+    ) => {
+      const userExists = users.some(({ id }) => id === author)
+      const postExists = posts.some(({ id }) => id === post)
+
+      if(userExists && postExists) {
+        const newComment = {
+          id: uuidv4(),
+          text,
+          author,
+          post
+        }
+        comments.push(newComment)
+
+        return newComment
+      }
+
+    }
   },
   User: {
     posts: parent => posts.filter(({ author }) => author === parent.id),

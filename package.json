@@ -1,6 +1,6 @@
 {
   "name": "graphql-practice",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "author": "Nicolás Omar González Passerino",
   "license": "MIT",
   "private": false,
@@ -15,12 +15,13 @@
   "homepage": "https://github.com/NicolasOmar/graphql-practice#readme",
   "scripts": {
     "start": "nodemon src/index.js --exec babel-node",
-    "update-version": "node scripts/update-version"
+    "update-version": "node scripts/update-version.js"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "graphql-yoga": "^1.18.3"
+    "graphql-yoga": "^1.18.3",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "husky": "^5.1.1",
