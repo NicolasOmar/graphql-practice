@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/NicolasOmar/graphql-practice#readme",
   "scripts": {
-    "start": "nodemon src/index.js --exec babel-node",
+    "start": "nodemon src/index.js --ext js,graphql --exec babel-node",
     "update-version": "node scripts/update-version.js"
   },
   "dependencies": {
