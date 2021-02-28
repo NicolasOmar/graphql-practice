@@ -1,17 +1,22 @@
 import { v4 as uuidv4 } from 'uuid'
 
 const Mutation = {
-  createUser: (parent, args, { db }) => {
-    const emailTaken = db.users.some(({ email }) => email === args.email)
+  createUser: (
+    parent,
+    { user },
+    { db }
+  ) => {
+    const { name, email, age } = user
+    const emailTaken = db.users.some(({ email }) => email === user.email)
 
     if (emailTaken) {
       throw new Error('The Email has been taken')
     } else {
       const newUser = {
         id: uuidv4(),
-        name: args.name,
-        email: args.email,
-        age: args.age
+        name,
+        email,
+        age
       }
 
       db.users.push(newUser)
@@ -20,13 +25,14 @@ const Mutation = {
   },
   createPost:(
     parent,
-    { title, body, published, author },
-    { db }
+    { post },
+    { db, pubSub }
   ) => {
+    const { title, body, published, author } = post
     const userExists = db.users.some(({ id }) => id === author)
 
     if (userExists) {
-      const newPost = {
+      const post = {
         id: uuidv4(),
         title,
         body,
@@ -34,31 +40,46 @@ const Mutation = {
         author
       }
 
-      db.posts.push(newPost)
+      db.posts.push(post)
+      
+      post.published && (
+        pubSub.publish(
+          `post ${author}`,
+          {
+            post: {
+              mutation: 'CREATED',
+              data: post
+            }
+          }
+        )
+      )
 
-      return newPost
+      return post
     } else {
       throw new Error('User not found')
     }
   },
   createComment:(
     parent,
-    { text, author, post },
-    { db }
+    { comment },
+    { db, pubSub }
   ) => {
+    const { text, author, post } = comment
     const userExists = db.users.some(({ id }) => id === author)
     const postExists = db.posts.some(({ id }) => id === post)
 
     if(userExists && postExists) {
-      const newComment = {
+      const comment = {
         id: uuidv4(),
         text,
         author,
         post
       }
-      db.comments.push(newComment)
 
-      return newComment
+      db.comments.push(comment)
+      pubSub.publish(`comment ${post}`, { comment })
+
+      return comment
     }
 
   },
@@ -80,7 +101,7 @@ const Mutation = {
       throw new Error('User not Found')
     }
   },
-  deletePost: (parent, args, { db }) => {
+  deletePost: (parent, args, { db, pubSub }) => {
     if (!args.id || !args.id.length) {
       throw new Error('No Post ID provided')
     }
@@ -99,6 +120,17 @@ const Mutation = {
         .filter(res => res !== null)
     
     commentsToDelete.forEach(index => db.comments.splice(index, 1))
+    deletedPost.published && (
+      pubSub.publish(
+        `post ${deletedPost.author}`,
+        {
+          post: {
+            mutation: 'DELETED',
+            data: deletedPost
+          }
+        }
+      )
+    )
 
     return deletedPost
   },
@@ -147,6 +179,19 @@ const Mutation = {
     args.data.title && (post.title = args.data.title)
     args.data.body && (post.body = args.data.body)
     args.data.published !== null && (post.published = args.data.published)
+
+    
+    args.data.published && (
+      pubSub.publish(
+        `post ${post.author}`,
+        {
+          post: {
+            mutation: 'UPDATED',
+            data: post
+          }
+        }
+      )
+    )
 
     return post
   }
