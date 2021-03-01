@@ -23,6 +23,15 @@ const runVersionUpdate = async () => {
       await exec(`npm version ${value} --no-git-tag-version`);
       await exec('git add package.json');
       await exec('git add package-lock.json');
+      await exec('cd ./1-exercises')
+      await exec(`npm version ${value} --no-git-tag-version`);
+      await exec('git add package.json');
+      await exec('git add package-lock.json');
+      await exec('cd ../2-poc/client')
+      await exec(`npm version ${value} --no-git-tag-version`);
+      await exec('git add package.json');
+      await exec('git add package-lock.json');
+      await exec('cd ../../')
       await exec(`git commit -m "${stdout.trim()}" --no-verify`);
     }
   } catch (err) {

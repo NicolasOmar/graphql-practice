@@ -1,6 +1,6 @@
 {
   "name": "graphql-practice",
-  "version": "0.0.2",
+  "version": "0.0.10",
   "author": "Nicolás Omar González Passerino",
   "license": "MIT",
   "private": false,
@@ -14,18 +14,14 @@
   },
   "homepage": "https://github.com/NicolasOmar/graphql-practice#readme",
   "scripts": {
-    "start": "nodemon src/index.js --ext js,graphql --exec babel-node",
-    "update-version": "node scripts/update-version.js"
-  },
-  "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "graphql-yoga": "^1.18.3",
-    "uuid": "^8.3.2"
+    "setup-all": "npm run setup-exercises && npm run setup-poc",
+    "setup-exercises": "cd ./1-exercises && npm i",
+    "setup-poc": "cd ./2-poc/client && npm i",
+    "update-version": "node scripts/update-version.js",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "husky": "^5.1.1",
-    "nodemon": "^2.0.7",
+    "husky": "^4.3.8",
     "prompts": "^2.4.0"
   },
   "husky": {

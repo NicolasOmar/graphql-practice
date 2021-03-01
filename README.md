@@ -4,12 +4,34 @@ Repository created to record my practice learning GraphQL with exercises based o
 ## Requirements
  - [Node](https://nodejs.org/en/download/) v12.16.1 or above
 
+## Setup
+| App Setup | Command |
+| ------ | ------ |
+| All | npm run setup-all |
+| Exercises | npm run setup-exercises |
+| POC | npm run setup-poc |
+
+## What did I learn?
+  - Set and run a server using minimun configuration
+    - How to set `typeDefs` and `resolvers`
+  - Understanding of `Scalar` and `Custom Types`
+  - How to make a `Query`
+    - Structure the operator to be called
+    - Make calls for deep-level objects
+    - Make calls using operators and configure it through a `resolver`
+    - Understanding, and configuration of `Relational data` through `Types`
+  - How to make a `Mutation`
+   - Configure `Input Types` to improve readability in Mutation operators
+  - Structure a good `folder structure`
+   - Creation of a `Schema file` to hold created Types (Queries, Mutation, Subscriptions and Custom Types)
+   - Spliting different Resolvers in files by Operation type or Entity
+
 ## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
 | --- | --- |
-| 0.X.X | Course hasn't been completed |
-| X.0.X | How many assignments/examples I have completed |
-| X.X.0 | How many times I have updated the next assignment/example |
+| X.0.0 | Course hasn't been completed |
+| 0.X.0 | How many assignments/examples I have completed |
+| 0.0.X | How many times I have updated the next assignment/example |
 
 ## Other Practice Repos
 | Node | React | Angular |
