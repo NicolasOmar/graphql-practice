@@ -1,6 +1,6 @@
 {
   "name": "graphql-practice",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "author": "Nicolás Omar González Passerino",
   "license": "MIT",
   "private": false,
@@ -16,7 +16,11 @@
   "scripts": {
     "setup-all": "npm i && npm run setup-exercises && npm run setup-poc",
     "setup-exercises": "cd ./1-exercises && npm i",
-    "setup-poc": "cd ./2-poc/client && npm i",
+    "setup-poc": "npm run setup-poc-server && npm run setup-poc-client",
+    "setup-poc-server": "cd ./2-poc/server && npm i",
+    "setup-poc-client": "cd ./2-poc/client && npm i",
+    "start-poc-server": "cd ./2-poc/server && npm start",
+    "start-poc-client": "cd ./2-poc/client && npm start",
     "update-version": "node scripts/update-version.js"
   },
   "devDependencies": {

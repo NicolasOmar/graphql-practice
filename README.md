@@ -1,12 +1,16 @@
 # GraphQL Practice
-Repository created to record my practice learning GraphQL with exercises based on the [Udemy Course](https://www.udemy.com/course/graphql-bootcamp) of [Andrew Mead](https://www.udemy.com/user/andrewmead/).
+Repository created to record my practice learning GraphQL with exercises based on the [Udemy Course](https://www.udemy.com/course/graphql-bootcamp) of [Andrew Mead](https://www.udemy.com/user/andrewmead/) and [Apollo GraphQL - Fullstack Tutorial](https://www.apollographql.com/docs/tutorial/introduction/).
 
 ## Requirements
  - [Node](https://nodejs.org/en/download/) v12.16.1 or above
 
+## Repo Structure
+ - 1-exercises: Exercises related to [Andrew's course](https://www.udemy.com/course/graphql-bootcamp).
+ - 2-poc: Server and Client projects from [Apollo's Tutorial](https://www.apollographql.com/docs/tutorial/introduction/) to understand an end to end implementation.
+
 ## Setup
 | App Setup | Command |
-| ------ | ------ |
+| --- | --- |
 | All | npm run setup-all |
 | Exercises | npm run setup-exercises |
 | POC | npm run setup-poc |
@@ -21,10 +25,10 @@ Repository created to record my practice learning GraphQL with exercises based o
     - Make calls using operators and configure it through a `resolver`
     - Understanding, and configuration of `Relational data` through `Types`
   - How to make a `Mutation`
-   - Configure `Input Types` to improve readability in Mutation operators
+    - Configure `Input Types` to improve readability in Mutation operators
   - Structure a good `folder structure`
-   - Creation of a `Schema file` to hold created Types (Queries, Mutation, Subscriptions and Custom Types)
-   - Spliting different Resolvers in files by Operation type or Entity
+    - Creation of a `Schema file` to hold created Types (Queries, Mutation, Subscriptions and Custom Types)
+    - Spliting different Resolvers in files by Operation type or Entity
 
 ## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
