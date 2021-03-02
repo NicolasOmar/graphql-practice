@@ -1,6 +1,6 @@
 {
   "name": "graphql-practice",
-  "version": "0.0.10",
+  "version": "0.0.6",
   "author": "Nicolás Omar González Passerino",
   "license": "MIT",
   "private": false,
@@ -14,11 +14,10 @@
   },
   "homepage": "https://github.com/NicolasOmar/graphql-practice#readme",
   "scripts": {
-    "setup-all": "npm run setup-exercises && npm run setup-poc",
+    "setup-all": "npm i && npm run setup-exercises && npm run setup-poc",
     "setup-exercises": "cd ./1-exercises && npm i",
     "setup-poc": "cd ./2-poc/client && npm i",
-    "update-version": "node scripts/update-version.js",
-    "prepare": "husky install"
+    "update-version": "node scripts/update-version.js"
   },
   "devDependencies": {
     "husky": "^4.3.8",
