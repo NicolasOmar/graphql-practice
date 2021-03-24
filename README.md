@@ -5,15 +5,15 @@ Repository created to record my practice learning GraphQL with exercises based o
  - [Node](https://nodejs.org/en/download/) v12.16.1 or above
 
 ## Repo Structure
- - 1-exercises: Exercises related to [Andrew's course](https://www.udemy.com/course/graphql-bootcamp).
- - 2-poc: Server and Client projects from [Apollo's Tutorial](https://www.apollographql.com/docs/tutorial/introduction/) to understand an end to end implementation.
+ - `1-exercises`: Exercises related to [Andrew's course](https://www.udemy.com/course/graphql-bootcamp).
+ - `2-apollo`: Server and Client projects from [Apollo's Tutorial](https://www.apollographql.com/docs/tutorial/introduction/) to understand an end to end implementation.
 
 ## Setup
 | App Setup | Command |
 | --- | --- |
 | All | npm run setup-all |
 | Exercises | npm run setup-exercises |
-| POC | npm run setup-poc |
+| Apollo Tutorial | npm run setup-apollo |
 
 ## What did I learn?
   - Set and run a server using minimun configuration

@@ -71,7 +71,7 @@ module.exports = {
         success: true,
         message: 'trip cancelled',
         launches: [launch],
-      };
+      };  
     },
   },
   Launch: {
