@@ -9,14 +9,21 @@ Repository created to record my practice learning GraphQL with exercises based o
  - `2-apollo`: Server and Client projects from [Apollo's Tutorial](https://www.apollographql.com/docs/tutorial/introduction/) to understand an end to end implementation.
 
 ## Setup
+After cloning the repo, go to the created folder and install the node packages.
+```sh
+git clone https://github.com/NicolasOmar/graphql-practice.git
+cd graphql-practice
+npm run setup-all
+```
+`setup-all` is the command to install all the projects, but if you want to do it one by one, you can change that last line for one of the following:
 | App Setup | Command |
 | --- | --- |
-| All | npm run setup-all |
-| Exercises | npm run setup-exercises |
-| Apollo Tutorial | npm run setup-apollo |
+| All | `npm run setup-all` |
+| Exercises | `npm run setup-exercises` |
+| Apollo Tutorial | `npm run setup-apollo` |
 
 ## What did I learn?
-  - Set and run a server using minimun configuration
+  - Set and run a server using a minimum configuration
     - How to set `typeDefs` and `resolvers`
   - Understanding of `Scalar` and `Custom Types`
   - How to make a `Query`
@@ -27,8 +34,8 @@ Repository created to record my practice learning GraphQL with exercises based o
   - How to make a `Mutation`
     - Configure `Input Types` to improve readability in Mutation operators
   - Structure a good `folder structure`
-    - Creation of a `Schema file` to hold created Types (Queries, Mutation, Subscriptions and Custom Types)
-    - Spliting different Resolvers in files by Operation type or Entity
+    - Creation of a `Schema file` to hold created Types (Queries, Mutation, Subscriptions, and Custom Types)
+    - Split different Resolvers into files by Operation type or Entity
 
 ## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
