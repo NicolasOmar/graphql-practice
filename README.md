@@ -7,6 +7,7 @@ Repository created to record my practice learning GraphQL with exercises based o
 ## Repo Structure
  - `1-exercises`: Exercises related to [Andrew's course](https://www.udemy.com/course/graphql-bootcamp).
  - `2-apollo`: Server and Client projects from [Apollo's Tutorial](https://www.apollographql.com/docs/tutorial/introduction/) to understand an end to end implementation.
+ - `3-prisma`: [Prisma](https://www.prisma.io/) learning.
 
 ## Setup
 After cloning the repo, go to the created folder and install the node packages.
@@ -20,7 +21,8 @@ npm run setup-all
 | --- | --- |
 | All | `npm run setup-all` |
 | Exercises | `npm run setup-exercises` |
-| Apollo Tutorial | `npm run setup-apollo` |
+| Apollo tutorial | `npm run setup-apollo` |
+| Prisma exercises | `npm run setup-prisma` |
 
 ## What did I learn?
   - Set and run a server using a minimum configuration
