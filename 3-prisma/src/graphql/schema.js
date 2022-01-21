@@ -6,12 +6,19 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser: User
+    addUser(name: String!): User
   }
 
   type User {
     id: String!
     name: String!
+  }
+
+  type Post {
+    id: String!
+    title: String
+    body: String
+    published: Boolean
   }
 `
 

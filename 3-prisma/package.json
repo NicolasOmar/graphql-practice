@@ -7,7 +7,8 @@
   "scripts": {
     "start": "nodemon src/index.js --ext js,graphql --exec babel-node",
     "setup": "npm i -g prisma && npm i && npm run set-prisma",
-    "set-prisma": "prisma db pull && prisma generate"
+    "set-prisma": "prisma db pull && prisma generate", 
+    "sync-schema": "prisma db push --accept-data-loss"
   },
   "dependencies": {
     "@prisma/client": "^3.8.1",

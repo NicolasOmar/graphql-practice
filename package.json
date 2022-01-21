@@ -23,6 +23,7 @@
     "run-exercises": "cd ./1-exercises && npm start",
     "run-server": "cd ./2-apollo/server && npm start",
     "run-client": "cd ./2-apollo/client && npm start",
+    "run-prisma": "cd ./3-prisma && npm start",
     "update-version": "node scripts/update-version.js"
   },
   "devDependencies": {

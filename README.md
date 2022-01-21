@@ -35,9 +35,14 @@ npm run setup-all
     - Understanding, and configuration of `Relational data` through `Types`
   - How to make a `Mutation`
     - Configure `Input Types` to improve readability in Mutation operators
+  - How to make a `Subscription`
   - Structure a good `folder structure`
     - Creation of a `Schema file` to hold created Types (Queries, Mutation, Subscriptions, and Custom Types)
     - Split different Resolvers into files by Operation type or Entity
+  - How to make CRUD operations (CREATE, READ, UPDATE & DELETE) to a SQL-based database using `Prisma`
+    - Understand how to map the database config using `prisma db pull` && `prisma generate`
+    - How to use its special annotations in the `schema`
+    - How to make changes to the database using `prisma db push`
 
 ## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
