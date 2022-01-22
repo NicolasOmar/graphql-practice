@@ -7,14 +7,17 @@
   "scripts": {
     "start": "nodemon src/index.js --ext js,graphql --exec babel-node",
     "setup": "npm i -g prisma && npm i && npm run set-prisma",
-    "set-prisma": "prisma db pull && prisma generate", 
+    "set-prisma": "prisma db pull && prisma generate",
     "sync-schema": "prisma db push --accept-data-loss"
   },
   "dependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.10",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-transform-runtime": "^7.16.10",
+    "@babel/preset-env": "^7.16.11",
     "@prisma/client": "^3.8.1",
     "apollo-server": "^3.6.2",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "graphql": "^16.2.0",
     "prisma": "^3.8.1",
     "uuid": "^8.3.2"
