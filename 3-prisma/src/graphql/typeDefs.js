@@ -5,15 +5,18 @@ const typeDefs = gql`
     getAllUsers: [User]!
     getAllBooks: [Book]!
     getAllReviews: [Review]!
-    # getUserById(id: String!): [User]!
-    # getBookById(id: String!): [Book]!
-    # getReviewById(id: String!): [Review]!
+    getUserById(id: String!): User!
+    getBookById(id: String!): Book!
+    getReviewById(id: String!): Review!
   }
 
   type Mutation {
     createUser(username: String!): User!
     createBook(bookData: CreateBookInput!): Book!
     createReview(reviewData: CreateReviewInput!): Review!
+    deleteUser(id: String!): User!
+    deleteBook(id: String!): Book!
+    deleteReview(id: String!): Review!
   }
   
   type User {

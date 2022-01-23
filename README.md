@@ -3,11 +3,13 @@ Repository created to record my practice learning GraphQL with exercises based o
 
 ## Requirements
  - [Node](https://nodejs.org/en/download/) v12.16.1 or above
+ - A relational database (like PostgreSQL or SQL Server, for example)
+ - [pgAdmin](https://www.pgadmin.org/) or any relational database client (for `3-prisma`)
 
 ## Repo Structure
  - `1-exercises`: Exercises related to [Andrew's course](https://www.udemy.com/course/graphql-bootcamp).
  - `2-apollo`: Server and Client projects from [Apollo's Tutorial](https://www.apollographql.com/docs/tutorial/introduction/) to understand an end to end implementation.
- - `3-prisma`: [Prisma](https://www.prisma.io/) learning.
+ - `3-prisma`: [Prisma](https://www.prisma.io/) learning and integration with a GraphQL server.
 
 ## Setup
 After cloning the repo, go to the created folder and install the node packages.
@@ -41,8 +43,9 @@ npm run setup-all
     - Split different Resolvers into files by Operation type or Entity
   - How to make CRUD operations (CREATE, READ, UPDATE & DELETE) to a SQL-based database using `Prisma`
     - Understand how to map the database config using `prisma db pull` && `prisma generate`
-    - How to use its special annotations in the `schema`
+    - How to use its special annotations in the `schema.prisma` file
     - How to make changes to the database using `prisma db push`
+    - Integrate the tool in a Node/GraphQL server
 
 ## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
