@@ -1,5 +1,5 @@
-import { PrismaClient } from '@prisma/client'
 import { ApolloServer } from 'apollo-server'
+import { PrismaClient } from '@prisma/client'
 // SCHEMA
 import typeDefs from './graphql/typeDefs'
 // RESOLVERS
@@ -16,9 +16,9 @@ const server = new ApolloServer({
     Mutation,
     ...Relationships
   },
-  context: {
-    prisma
-  }
+  context: async ({ req }) => (
+    { prisma, request: req }
+  )
 })
 
 server.listen().then(async ({ url }) => console.log(`Welcome to the page ${url}`))

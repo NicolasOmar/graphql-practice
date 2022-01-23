@@ -46,6 +46,8 @@ npm run setup-all
     - How to use its special annotations in the `schema.prisma` file
     - How to make changes to the database using `prisma db push`
     - Integrate the tool in a Node/GraphQL server
+    - Hash and compare hashed passwords using [bcrypt](https://www.npmjs.com/package/bcrypt)
+    - Create JWT and verify tokens using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 
 ## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
