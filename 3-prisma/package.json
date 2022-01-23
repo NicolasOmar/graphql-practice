@@ -1,14 +1,14 @@
 {
   "name": "graphql-practice-prisma",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Nicolás Omar González Passerino",
   "license": "MIT",
   "private": false,
   "scripts": {
     "start": "nodemon src/index.js --ext js,graphql --exec babel-node",
-    "setup": "npm i -g prisma && npm i && npm run set-prisma",
-    "set-prisma": "prisma db pull && prisma generate",
-    "sync-schema": "prisma db push --accept-data-loss"
+    "setup": "npm i -g prisma && npm i && npm run generate-schema",
+    "generate-schema": "prisma db pull && prisma generate",
+    "sync-schema": "prisma db push --accept-data-loss --schema=./src/prisma/schema.prisma"
   },
   "dependencies": {
     "@babel/cli": "^7.16.8",

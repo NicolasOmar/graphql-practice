@@ -2,35 +2,55 @@ import { gql } from "apollo-server";
 
 const typeDefs = gql`
   type Query {
-    getAllUsers: [User]
-    getAllPosts: [Post]
+    getAllUsers: [User]!
+    getAllBooks: [Book]!
+    getAllReviews: [Review]!
+    # getUserById(id: String!): [User]!
+    # getBookById(id: String!): [Book]!
+    # getReviewById(id: String!): [Review]!
   }
 
   type Mutation {
-    addUser(name: String!): User
-    addPost(post: CreatePostInput!): Post
+    createUser(username: String!): User!
+    createBook(bookData: CreateBookInput!): Book!
+    createReview(reviewData: CreateReviewInput!): Review!
   }
   
   type User {
     id: String!
-    name: String!
-    posts: [Post]
+    username: String!
+    reviews: [Review]!
   }
 
-  type Post {
+  type Book {
     id: String!
+    isbn: String
     title: String
-    body: String
-    published: Boolean
-    userId: String!
-    author: User!
+    author: String!
+    reviews: [Review]!
   }
 
-  input CreatePostInput {
-    title: String!
-    body: String
-    published: Boolean
+  type Review {
+    id: String!
+    text: String
+    rating: Int!
+    userId: String!
+    bookId: String!
+    author: User!
+    book: Book!
+  }
+
+  input CreateBookInput {
+    isbn: String
+    title: String
     author: String!
+  }
+
+  input CreateReviewInput {
+    text: String
+    rating: Int!
+    userId: String!
+    bookId: String!
   }
 `
 

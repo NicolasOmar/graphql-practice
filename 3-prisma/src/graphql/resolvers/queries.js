@@ -1,6 +1,7 @@
 const Queries = {
   getAllUsers: async (_, __, { prisma }) => await prisma.user.findMany(),
-  getAllPosts: async (_, __, { prisma }) => await prisma.post.findMany()
+  getAllBooks: async (_, __, { prisma }) => await prisma.book.findMany(),
+  getAllReviews: async (_, __, { prisma }) => await prisma.review.findMany()
 }
 
 export default Queries

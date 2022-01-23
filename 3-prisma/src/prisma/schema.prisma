@@ -8,16 +8,25 @@ datasource db {
 }
 
 model User {
-  id    String @id @db.Uuid
-  name  String @db.VarChar
-  posts Post[]
+  id        String @id @db.Uuid @unique
+  username  String @db.VarChar @unique
+  reviews   Review[]
 }
 
-model Post {
-  id        String @id @db.Uuid
-  title     String @db.VarChar
-  body      String @db.VarChar
-  published Boolean @db.Boolean
-  author    User @relation(fields: [userId], references: [id])
-  userId    String @db.Uuid
+model Book {
+  id      String @id @db.Uuid @unique
+  isbn    String @db.VarChar
+  title   String @db.VarChar
+  author  String @db.VarChar
+  reviews Review[]
+}
+
+model Review {
+  id      String @id @db.Uuid @unique
+  text    String @db.VarChar
+  rating  Int @db.Integer
+  userId  String @db.Uuid
+  bookId  String @db.Uuid
+  author  User @relation(fields: [userId], references: [id])
+  book    Book @relation(fields: [bookId], references: [id])
 }

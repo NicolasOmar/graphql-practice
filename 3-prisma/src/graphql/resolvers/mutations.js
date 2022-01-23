@@ -1,21 +1,28 @@
 import { v4 as uuid } from 'uuid'
 
 const Mutation = {
-  addUser: async (_, { name }, { prisma }) => (
+  createUser: async (_, { username }, { prisma }) => (
     await prisma.user.create({
-      data: { id: uuid(), name }
+      data: { id: uuid(), username }
     })
   ),
-  addPost: async (_, { post }, { prisma }) => (
-    await (prisma.post.create({
+  createBook: async (_, { bookData }, { prisma }) => (
+    await (prisma.book.create({
       data: {
-        id: uuid(),
-        title: post.title ?? null,
-        body: post.body ?? null,
-        published: post.published ?? false,
-        userId: post.author
+        ...bookData,
+        id: uuid()
       }
     }))
+  ),
+  createReview: async(_, { reviewData }, { prisma }) => (
+    await (
+      prisma.review.create({
+        data: {
+          ...reviewData,
+          id: uuid()
+        }
+      })
+    )
   )
 }
 
