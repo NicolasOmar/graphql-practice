@@ -1,5 +1,8 @@
+import { authUser } from "../utils/auth"
+
 const Relationships = {
   User: {
+    password: ({ password }, __, { request }) => authUser(request) ? password : null,
     reviews: async ({ id }, _, { prisma }) => await prisma.review.findMany({ where: { userId: id }})
   },
   Book: {

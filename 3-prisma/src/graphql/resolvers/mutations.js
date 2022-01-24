@@ -1,9 +1,7 @@
 import bcrypt from 'bcrypt'
-import { v4 as uuid } from 'uuid'
+// UTILS
 import { authUser } from '../utils/auth'
-
-const create = async (entity, payload, prisma) => await prisma[entity].create({ data: { ...payload, id: uuid() }})
-const deleteRegistry = async (entity, id, prisma) => await prisma[entity].delete({ where: { id } })
+import { create, deleteRegistry } from '../utils/prisma'
 
 const Mutation = {
   createUser: async (_, { userData }, { prisma }) => {

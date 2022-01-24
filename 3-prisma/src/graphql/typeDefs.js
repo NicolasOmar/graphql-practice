@@ -2,9 +2,9 @@ import { gql } from "apollo-server";
 
 const typeDefs = gql`
   type Query {
-    getAllUsers: [User]!
-    getAllBooks: [Book]!
-    getAllReviews: [Review]!
+    getAllUsers(query: queryInput): [User]!
+    getAllBooks(query: queryInput): [Book]!
+    getAllReviews(query: queryInput): [Review]!
     getUserById(id: String!): User!
     getBookById(id: String!): Book!
     getReviewById(id: String!): Review!
@@ -43,6 +43,11 @@ const typeDefs = gql`
     bookId: String!
     author: User!
     book: Book!
+  }
+
+  input queryInput {
+    page: Int
+    rows: Int
   }
 
   input CreateUserInput {
