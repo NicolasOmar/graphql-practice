@@ -1,0 +1,39 @@
+{
+  "_user": {
+    "mock": {
+      "name": "Basic Test User",
+      "email": "test@gmail.com",
+      "age": 3
+    },
+    "checkProps": [
+      "id",
+      "name",
+      "email"
+    ]
+  },
+  "_post": {
+    "mock": {
+      "title": "A Basic post",
+      "body": "Basic mocked post",
+      "published": false,
+      "author": null
+    },
+    "checkProps": [
+      "id",
+      "title",
+      "body",
+      "published"
+    ]
+  },
+  "_comment": {
+    "mock": {
+      "text": "A baisc comment for this mocks",
+      "author": null,
+      "post": null
+    },
+    "checkProps": [
+      "id",
+      "text"
+    ]
+  }
+}

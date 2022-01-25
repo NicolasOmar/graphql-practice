@@ -68,8 +68,9 @@ const Mutation = {
       pubSub.publish(`comment ${post}`, { comment })
 
       return comment
+    } else {
+      throw new Error('User/Post not found')
     }
-
   },
   deleteUser: (_, args, { db }) => {
     const userIndex = db.users.findIndex(({ id }) => id === args.id)

@@ -6,8 +6,6 @@ const client = new ApolloBoost({
 const getUsers = gql`
   query {
     users: getAllUsers {
-      id
-      name
       email
     }
   }

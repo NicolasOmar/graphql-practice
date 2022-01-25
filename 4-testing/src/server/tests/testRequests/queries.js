@@ -9,3 +9,14 @@ export const getUsers = gql`
     }
   }
 `
+
+export const getPosts = gql`
+  query {
+    posts: getPosts {
+      id
+      title
+      body
+      published
+    }
+  }
+`
