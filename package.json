@@ -1,6 +1,6 @@
 {
   "name": "graphql-practice",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "Nicolás Omar González Passerino",
   "license": "MIT",
   "private": false,
@@ -14,14 +14,16 @@
   },
   "homepage": "https://github.com/NicolasOmar/graphql-practice#readme",
   "scripts": {
-    "setup-all": "npm i && npm run setup-exercises && npm run setup-apollo",
+    "setup-all": "npm i && npm run setup-exercises && npm run setup-apollo && npm run setup-prisma",
     "setup-exercises": "cd ./1-exercises && npm i",
     "setup-apollo": "npm run setup-apollo-server && npm run setup-apollo-client",
     "setup-apollo-server": "cd ./2-apollo/server && npm i",
     "setup-apollo-client": "cd ./2-apollo/client && npm i",
+    "setup-prisma": " cd ./3-prisma && npm run setup",
     "run-exercises": "cd ./1-exercises && npm start",
     "run-server": "cd ./2-apollo/server && npm start",
     "run-client": "cd ./2-apollo/client && npm start",
+    "run-prisma": "cd ./3-prisma && npm start",
     "update-version": "node scripts/update-version.js"
   },
   "devDependencies": {
