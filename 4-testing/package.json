@@ -1,0 +1,19 @@
+{
+  "name": "graphql-practice-testing",
+  "version": "0.0.1",
+  "author": "Nicolás Omar González Passerino",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "parcel src/index.html",
+    "setup": "npm i",
+    "test": "jest"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.4.9",
+    "graphql": "^16.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.2.1"
+  }
+}

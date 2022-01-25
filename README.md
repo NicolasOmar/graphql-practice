@@ -2,14 +2,15 @@
 Repository created to record my practice learning GraphQL with exercises based on the [Udemy Course](https://www.udemy.com/course/graphql-bootcamp) of [Andrew Mead](https://www.udemy.com/user/andrewmead/) and [Apollo GraphQL - Fullstack Tutorial](https://www.apollographql.com/docs/tutorial/introduction/).
 
 ## Requirements
- - [Node](https://nodejs.org/en/download/) v12.16.1 or above
- - A relational database (like PostgreSQL or MySQL, for example)
+ - [Node](https://nodejs.org/en/download/) v16.13.2 or above
+ - A relational database (like PostgreSQL or MySQL, for example) (for `3-prisma`)
  - [pgAdmin](https://www.pgadmin.org/) or any relational database client (for `3-prisma`)
 
 ## Repo Structure
  - `1-exercises`: Exercises related to [Andrew's course](https://www.udemy.com/course/graphql-bootcamp).
  - `2-apollo`: Server and Client projects from [Apollo's Tutorial](https://www.apollographql.com/docs/tutorial/introduction/) to understand an end to end implementation.
  - `3-prisma`: [Prisma](https://www.prisma.io/) learning and integration with a GraphQL server.
+ - `4-testing`: How to create and run unit tests for a GraphQL server
 
 ## Setup
 After cloning the repo, go to the created folder and install the node packages.
@@ -25,6 +26,7 @@ npm run setup-all
 | Exercises | `npm run setup-exercises` |
 | Apollo tutorial | `npm run setup-apollo` |
 | Prisma exercises | `npm run setup-prisma` |
+| Unit testing | `npm run setup-testing` |
 
 ## What did I learn?
   - Set and run a server using a minimum configuration
