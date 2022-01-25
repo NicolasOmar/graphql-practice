@@ -5,15 +5,28 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "parcel src/index.html",
-    "setup": "npm i",
+    "start": "parcel src/client/index.html",
+    "node-server": "babel-node src/server/index.js",
+    "server": "nodemon --exec npm run node-server",
     "test": "jest"
   },
   "dependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-transform-runtime": "^7.16.10",
+    "@babel/preset-env": "^7.16.11",
     "apollo-boost": "^0.4.9",
-    "graphql": "^16.2.0"
+    "faker": "^5.5.3",
+    "graphql-yoga": "^1.18.3"
   },
   "devDependencies": {
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
     "parcel": "^2.2.1"
+  },
+  "jest": {
+    "globalSetup": "./scripts/globalSetup.js",
+    "globalTeardown": "./scripts/globalTeardown.js"
   }
 }

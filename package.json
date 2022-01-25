@@ -1,6 +1,6 @@
 {
   "name": "graphql-practice",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Nicolás Omar González Passerino",
   "license": "MIT",
   "private": false,
@@ -25,7 +25,7 @@
     "run-server": "cd ./2-apollo/server && npm start",
     "run-client": "cd ./2-apollo/client && npm start",
     "run-prisma": "cd ./3-prisma && npm start",
-    "run-testing": "cd ./4-testing && npm start",
+    "run-testing": "cd ./4-testing && npm i",
     "update-version": "node scripts/update-version.js"
   },
   "devDependencies": {
