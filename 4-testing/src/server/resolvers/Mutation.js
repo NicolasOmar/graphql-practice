@@ -1,11 +1,7 @@
-import { v4 as uuidv4 } from 'uuid'
+import { datatype } from 'faker'
 
 const Mutation = {
-  createUser: (
-    parent,
-    { user },
-    { db }
-  ) => {
+  createUser: (_, { user }, { db } ) => {
     const { name, email, age } = user
     const emailTaken = db.users.some(({ email }) => email === user.email)
 
@@ -13,7 +9,7 @@ const Mutation = {
       throw new Error('The Email has been taken')
     } else {
       const newUser = {
-        id: uuidv4(),
+        id: datatype.uuid(),
         name,
         email,
         age
@@ -23,17 +19,13 @@ const Mutation = {
       return newUser
     }
   },
-  createPost:(
-    parent,
-    { post },
-    { db, pubSub }
-  ) => {
+  createPost:(_, { post }, { db, pubSub }) => {
     const { title, body, published, author } = post
     const userExists = db.users.some(({ id }) => id === author)
 
     if (userExists) {
       const post = {
-        id: uuidv4(),
+        id: datatype.uuid(),
         title,
         body,
         published,
@@ -59,18 +51,14 @@ const Mutation = {
       throw new Error('User not found')
     }
   },
-  createComment:(
-    parent,
-    { comment },
-    { db, pubSub }
-  ) => {
+  createComment:(_, { comment }, { db, pubSub }) => {
     const { text, author, post } = comment
     const userExists = db.users.some(({ id }) => id === author)
     const postExists = db.posts.some(({ id }) => id === post)
 
     if(userExists && postExists) {
       const comment = {
-        id: uuidv4(),
+        id: datatype.uuid(),
         text,
         author,
         post
@@ -83,7 +71,7 @@ const Mutation = {
     }
 
   },
-  deleteUser: (parent, args, { db }) => {
+  deleteUser: (_, args, { db }) => {
     const userIndex = db.users.findIndex(({ id }) => id === args.id)
 
     if (userIndex >= 0) {
@@ -101,7 +89,7 @@ const Mutation = {
       throw new Error('User not Found')
     }
   },
-  deletePost: (parent, args, { db, pubSub }) => {
+  deletePost: (_, args, { db, pubSub }) => {
     if (!args.id || !args.id.length) {
       throw new Error('No Post ID provided')
     }
@@ -134,7 +122,7 @@ const Mutation = {
 
     return deletedPost
   },
-  deleteComment: (parent, args, { db }) => {
+  deleteComment: (_, args, { db }) => {
     if (!args.id || !args.id.length) {
       throw new Error('No Comment ID provided')
     }
@@ -149,7 +137,7 @@ const Mutation = {
 
     return deletedComment
   },
-  updateUser: (parent, args, { db }) => {
+  updateUser: (_, args, { db }) => {
     const user = db.users.find(({ id }) => id === args.id)
     
     if (!user) {
@@ -169,7 +157,7 @@ const Mutation = {
 
     return user
   },
-  updatePost: (parent, args, { db }) => {
+  updatePost: (_, args, { db }) => {
     const post = db.posts.find(({ id }) => id === args.id)
     
     if (!post) {
@@ -196,7 +184,7 @@ const Mutation = {
     return post
   }
   ,
-  updateComment: (parent, args, { db }) => {
+  updateComment: (_, args, { db }) => {
     const comment = db.comments.find(({ id }) => id === args.id)
     
     if (!comment) {
