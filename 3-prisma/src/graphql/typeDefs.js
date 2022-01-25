@@ -48,6 +48,8 @@ const typeDefs = gql`
   input queryInput {
     page: Int
     rows: Int
+    orderBy: String
+    order: String
   }
 
   input CreateUserInput {

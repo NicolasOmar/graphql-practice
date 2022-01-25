@@ -48,7 +48,8 @@ npm run setup-all
     - Integrate the tool in a Node/GraphQL server
     - Hash and compare hashed passwords using [bcrypt](https://www.npmjs.com/package/bcrypt)
     - Create JWT and verify tokens using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
-    - Paginate results using `take` and `skip` properties in queries
+    - Paginate results by using `take` and `skip` properties in queries
+    - Sort the results by using `orderBy` and `order`
 
 ## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |
