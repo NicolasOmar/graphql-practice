@@ -52,6 +52,10 @@ npm run setup-all
     - Create JWT and verify tokens using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
     - Paginate results by using `take` and `skip` properties in queries
     - Sort the results by using `orderBy` and `order`
+  - How to create and run unit test cases by using [Jest](https://www.npmjs.com/package/jest)
+    - Run an Apollo GraphQL client for plain Javascript with [apollo-boost](https://www.npmjs.com/package/apollo-boost) and [cross-fetch](https://www.npmjs.com/package/cross-fetch)
+    - Create a fake database on the fly using [faker](https://www.npmjs.com/package/faker)
+    - Build a site with pure HTML with [parcel](https://www.npmjs.com/package/parcel)
 
 ## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
 | Number | Meaning |

@@ -1,73 +1,33 @@
-import { datatype } from 'faker'
+import { datatype, name, internet, lorem } from 'faker'
 
-const users = [
-  {
+const db = quantity => {
+  const users = Array(quantity).fill(null).map(() => ({
     id: datatype.uuid(),
-    name: 'User 1',
-    email: 'user_1@mail.com',
-    age: 28,
-  }, {
+    name: `${name.firstName()} ${name.lastName()}`,
+    email: internet.email(),
+    age: datatype.number({ min: 1, max: 99 })
+  }))
+
+  const posts = Array(quantity).fill(null).map((_, i) => ({
     id: datatype.uuid(),
-    name: 'User 2',
-    email: 'user_2@mail.com',
-    age: null,
-  }, {
+    title: lorem.words(2),
+    body: lorem.sentence(4),
+    published: datatype.boolean(),
+    author: users[i].id
+  }))
+
+  const comments = Array(quantity).fill(null).map((_, i) => ({
     id: datatype.uuid(),
-    name: 'User 3',
-    email: 'user_3@mail.com',
-    age: null,
-  }, {
-    id: datatype.uuid(),
-    name: 'User 7',
-    email: 'user_7@mail.com',
-    age: null,
+    text: lorem.paragraphs(1, ','),
+    author: users[i].id,
+    post: posts[i].id
+  }))
+  
+  return {
+    users,
+    posts,
+    comments
   }
-]
-
-const posts = [
-  {
-    id: datatype.uuid(),
-    title: 'Title of Post A',
-    body: 'Body of Post A - A',
-    published: true
-  }, {
-    id: datatype.uuid(),
-    title: 'Title of Post B',
-    body: 'Body of Post B - B',
-    published: true
-  }, {
-    id: datatype.uuid(),
-    title: 'Title of Post C',
-    body: 'Body of Post C - C',
-    published: false
-  }, {
-    id: datatype.uuid(),
-    title: 'Title of Post D',
-    body: 'Body of Post D - D',
-    published: true
-  }
-].map((post, i) => ({ ...post, author: users[i].id }))
-
-const comments = [
-  {
-    id: datatype.uuid(),
-    text: 'Text 001-001-001'
-  }, {
-    id: datatype.uuid(),
-    text: 'Text 002-002-002'
-  }, {
-    id: datatype.uuid(),
-    text: 'Text 010-010-010'
-  }, {
-    id: datatype.uuid(),
-    text: 'Text 021-021-021'
-  }
-].map((comment, i) => ({ ...comment, author: users[i].id, post: posts[i].id}))
-
-const db = {
-  users,
-  posts,
-  comments
 }
 
 export default db

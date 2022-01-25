@@ -28,6 +28,7 @@
     "jest": "^27.4.7"
   },
   "jest": {
+    "verbose": true,
     "globalSetup": "./scripts/globalSetup.js",
     "globalTeardown": "./scripts/globalTeardown.js"
   }
