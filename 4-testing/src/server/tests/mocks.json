@@ -1,0 +1,55 @@
+{
+  "_user": {
+    "mock": {
+      "name": "Basic Test User",
+      "email": "test@gmail.com",
+      "age": 3
+    },
+    "updatedMock": {
+      "name": "Updated Test User",
+      "email": "updated@gmail.com",
+      "age": 4
+    },
+    "checkProps": [
+      "id",
+      "name",
+      "email"
+    ]
+  },
+  "_post": {
+    "mock": {
+      "title": "A Basic post",
+      "body": "Basic mocked post",
+      "published": false,
+      "author": null
+    },
+    "updatedMock": {
+      "title": "An Updated post",
+      "body": "Basic and updated post",
+      "published": true,
+      "author": null
+    },
+    "checkProps": [
+      "id",
+      "title",
+      "body",
+      "published"
+    ]
+  },
+  "_comment": {
+    "mock": {
+      "text": "A basic comment for this mock",
+      "author": null,
+      "post": null
+    },
+    "updatedMock": {
+      "text": "A basic and updated comment for this mock",
+      "author": null,
+      "post": null
+    },
+    "checkProps": [
+      "id",
+      "text"
+    ]
+  }
+}

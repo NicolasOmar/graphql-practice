@@ -2,14 +2,15 @@
 Repository created to record my practice learning GraphQL with exercises based on the [Udemy Course](https://www.udemy.com/course/graphql-bootcamp) of [Andrew Mead](https://www.udemy.com/user/andrewmead/) and [Apollo GraphQL - Fullstack Tutorial](https://www.apollographql.com/docs/tutorial/introduction/).
 
 ## Requirements
- - [Node](https://nodejs.org/en/download/) v12.16.1 or above
- - A relational database (like PostgreSQL or MySQL, for example)
+ - [Node](https://nodejs.org/en/download/) v16.13.2 or above
+ - A relational database (like PostgreSQL or MySQL, for example) (for `3-prisma`)
  - [pgAdmin](https://www.pgadmin.org/) or any relational database client (for `3-prisma`)
 
 ## Repo Structure
  - `1-exercises`: Exercises related to [Andrew's course](https://www.udemy.com/course/graphql-bootcamp).
  - `2-apollo`: Server and Client projects from [Apollo's Tutorial](https://www.apollographql.com/docs/tutorial/introduction/) to understand an end to end implementation.
  - `3-prisma`: [Prisma](https://www.prisma.io/) learning and integration with a GraphQL server.
+ - `4-testing`: How to create and run unit tests for a GraphQL server
 
 ## Setup
 After cloning the repo, go to the created folder and install the node packages.
@@ -25,6 +26,7 @@ npm run setup-all
 | Exercises | `npm run setup-exercises` |
 | Apollo tutorial | `npm run setup-apollo` |
 | Prisma exercises | `npm run setup-prisma` |
+| Unit testing | `npm run setup-testing` |
 
 ## What did I learn?
   - Set and run a server using a minimum configuration
@@ -50,13 +52,13 @@ npm run setup-all
     - Create JWT and verify tokens using [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
     - Paginate results by using `take` and `skip` properties in queries
     - Sort the results by using `orderBy` and `order`
+  - How to create and run unit test cases by using [Jest](https://www.npmjs.com/package/jest)
+    - Run an Apollo GraphQL client for plain Javascript with [apollo-boost](https://www.npmjs.com/package/apollo-boost) and [cross-fetch](https://www.npmjs.com/package/cross-fetch)
+    - Create a fake database on the fly using [faker](https://www.npmjs.com/package/faker)
+    - Build a site with pure HTML with [parcel](https://www.npmjs.com/package/parcel)
 
 ## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
-| Number | Meaning |
-| --- | --- |
-| X.0.0 | Course hasn't been completed |
-| 0.X.0 | How many assignments/examples I have completed |
-| 0.0.X | How many times I have updated the next assignment/example |
+**This course has been completed on 26/01/2022 - [Certificate](https://www.udemy.com/certificate/UC-a8dd5090-a1f0-4f22-ae17-0a56cc66dd0b/)**
 
 ## Other Practice Repos
 | Node | React | Angular |
