@@ -45,7 +45,7 @@ input CreateCommentInput {
 input UpdateUserInput {
   name: String
   email: String
-  role: String
+  age: Int
 }
 
 input UpdatePostInput {

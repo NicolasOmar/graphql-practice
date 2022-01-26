@@ -20,3 +20,12 @@ export const getPosts = gql`
     }
   }
 `
+
+export const getComments = gql`
+  query {
+    comments: getAllComments {
+      id
+      text
+    }
+  }
+`

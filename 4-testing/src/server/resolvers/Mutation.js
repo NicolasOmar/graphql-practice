@@ -131,7 +131,7 @@ const Mutation = {
     const commentIndex = db.comments.findIndex(({ id }) => id === args.id)
 
     if (commentIndex < 0) {
-      throw new Error('Post not Found')
+      throw new Error('Comment not Found')
     }
 
     const deletedComment = db.comments.splice(commentIndex, 1)[0]
@@ -146,23 +146,24 @@ const Mutation = {
     }
 
     if (args.data.email) {
-      const emailIsTaken = db.users.some(user => user.email === data.email)
+      const emailIsTaken = db.users.some(user => user.email === args.data.email)
 
-      if (!emailIsTaken) {
+      if (emailIsTaken) {
         throw new Error('Email already taken')
       }
     }
 
     args.data.name && (user.name = args.data.name)
-    args.data.role && (user.role = args.data.role)
+    args.data.email && (user.email = args.data.email)
+    args.data.age && (user.age = args.data.age)
 
     return user
   },
-  updatePost: (_, args, { db }) => {
+  updatePost: (_, args, { db, pubSub }) => {
     const post = db.posts.find(({ id }) => id === args.id)
     
     if (!post) {
-      throw new Error('post not Found')
+      throw new Error('Post not Found')
     }
 
     args.data.title && (post.title = args.data.title)

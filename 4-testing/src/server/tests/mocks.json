@@ -5,6 +5,11 @@
       "email": "test@gmail.com",
       "age": 3
     },
+    "updatedMock": {
+      "name": "Updated Test User",
+      "email": "updated@gmail.com",
+      "age": 4
+    },
     "checkProps": [
       "id",
       "name",
@@ -18,6 +23,12 @@
       "published": false,
       "author": null
     },
+    "updatedMock": {
+      "title": "An Updated post",
+      "body": "Basic and updated post",
+      "published": true,
+      "author": null
+    },
     "checkProps": [
       "id",
       "title",
@@ -27,7 +38,12 @@
   },
   "_comment": {
     "mock": {
-      "text": "A baisc comment for this mocks",
+      "text": "A basic comment for this mock",
+      "author": null,
+      "post": null
+    },
+    "updatedMock": {
+      "text": "A basic and updated comment for this mock",
       "author": null,
       "post": null
     },
