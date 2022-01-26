@@ -1,5 +1,11 @@
 import { gql } from 'apollo-boost'
 
+export const meQuery = gql`
+  query {
+    me
+  }
+`
+
 export const getUsers = gql`
   query {
     users: getAllUsers {

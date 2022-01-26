@@ -1,12 +1,12 @@
 type Query {
-  me: User!
-  greeting(name: String!, role: String): String!
+  me: String!
   getAllUsers: [User!]!
   getPosts(term: String): [Post]!
   getAllComments: [Comment!]!
 }
 
 type Mutation {
+  loginUser(email: String!): String!
   createUser(user: CreateUserInput): User!
   createPost(post: CreatePostInput): Post!
   createComment(comment: CreateCommentInput): Comment!

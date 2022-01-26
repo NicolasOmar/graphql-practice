@@ -1,6 +1,16 @@
 import { gql } from 'apollo-boost'
 import { _user, _post, _comment } from '../mocks.json'
 
+export const loginUser = (email = null) => (
+  gql`
+    mutation {
+      loginUser(
+        email: "${email}"
+      )
+    }
+  `
+)
+
 export const createUser = (user = _user.mock) => (
   gql`
     mutation {

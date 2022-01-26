@@ -1,6 +1,16 @@
 import { datatype } from 'faker'
+import jwt from 'jsonwebtoken'
 
 const Mutation = {
+  loginUser: (_, { email }, { db }) => {
+    const user = db.users.find(user => user.email === email)
+
+    if (user) {
+      return jwt.sign({ email }, 'mySecret')
+    } else {
+      throw new Error('User not found')
+    }
+  },
   createUser: (_, { user }, { db } ) => {
     const { name, email, age } = user
     const emailTaken = db.users.some(({ email }) => email === user.email)

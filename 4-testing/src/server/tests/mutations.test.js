@@ -3,7 +3,7 @@ import ApolloBoost from 'apollo-boost'
 // MOCKS
 import { _user, _post, _comment } from './mocks.json'
 // MUTATIONS AND QUERIES FOR TESTING
-import { createComment, createPost, createUser, deletePost, deleteUser, deleteComment, updateUser, updatePost, updateComment } from './requests/mutations'
+import { createComment, createPost, createUser, deletePost, deleteUser, deleteComment, updateUser, updatePost, updateComment, loginUser } from './requests/mutations'
 import { getComments, getPosts, getUsers } from './requests/queries'
 // UTILS
 import { checkPropsExists } from '../utils/checks'
@@ -20,6 +20,21 @@ beforeAll(async () => {
 })
 
 describe('Mutations', () => {
+  describe('loginUser', () => {
+    test('Should login the first user and return a token', async () => {
+      const { data } = await client.mutate({ mutation: loginUser(users[0].email) })
+      expect(data.loginUser).not.toBeNull()
+    })
+
+    test('Should throw an Error trying to login without a email', async () => {
+      await expect(client.mutate({ mutation: loginUser() })).rejects.toThrow()
+    })
+
+    test('Should throw an Error trying to login with a not registered email', async () => {
+      await expect(client.mutate({ mutation: loginUser('error@gmail.com') })).rejects.toThrow()
+    })
+  })
+
   describe('createUser', () => {
     test('Should create a new user', async () => {
       const { data } = await client.mutate({ mutation: createUser() })

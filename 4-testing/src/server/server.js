@@ -5,9 +5,7 @@ import createDb from './db/data'
 import Query from './resolvers/Query'
 import Mutation from './resolvers/Mutation'
 import Subscription from './resolvers/Subscription'
-import User from './resolvers/User'
-import Post from './resolvers/Post'
-import Comment from './resolvers/Comment'
+import Relationships from './resolvers/Relationships'
 
 const db = createDb(4)
 const pubSub = new PubSub()
@@ -17,14 +15,13 @@ const server = new GraphQLServer({
     Query,
     Mutation,
     Subscription,
-    User,
-    Post,
-    Comment
+    ...Relationships
   },
-  context: {
+  context: ({ request }) => ({
     db,
-    pubSub
-  }
+    pubSub,
+    request
+  })
 })
 
 export default server

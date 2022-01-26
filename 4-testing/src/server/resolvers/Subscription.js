@@ -1,6 +1,6 @@
 const Subscription = {
   post: {
-    subscribe(parent, { userId }, { db, pubSub }) {
+    subscribe(_, { userId }, { db, pubSub }) {
       const user = db.users.find(({ id }) => id === userId)
 
       if (!user) {
@@ -11,7 +11,7 @@ const Subscription = {
     }
   },
   comment: {
-    subscribe(parent, { postId }, { db, pubSub }) {
+    subscribe(_, { postId }, { db, pubSub }) {
       const post = db.posts.find(({ id, published }) => id === postId && published)
 
       if (!post) {

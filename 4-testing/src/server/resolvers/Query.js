@@ -1,10 +1,12 @@
+import { authUser } from "../utils/auth"
+
 const Query = {
-  greeting: (_, args) => `Hello ${args.role || 'User'} ${args.name}`,
+  me: (_, __, { request }) => authUser(request),
   getAllUsers: (_, __, { db }) => [...db.users],
   getPosts: (_, { term }, { db }) => {
     return term
-      ? db.posts.filter(post => post.title.includes(term) || post.body.includes(term))
-      : db.posts
+      ? [...db.posts].filter(post => post.title.includes(term) || post.body.includes(term))
+      : [...db.posts]
   },
   getAllComments: (_, __, { db }) => [...db.comments]
 }
