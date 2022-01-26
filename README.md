@@ -58,11 +58,7 @@ npm run setup-all
     - Build a site with pure HTML with [parcel](https://www.npmjs.com/package/parcel)
 
 ## Version (currently ![GraphQL Practice](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square))
-| Number | Meaning |
-| --- | --- |
-| X.0.0 | Course hasn't been completed |
-| 0.X.0 | How many assignments/examples I have completed |
-| 0.0.X | How many times I have updated the next assignment/example |
+**This course has been completed on 26/01/2022 - [Certificate](https://www.udemy.com/certificate/UC-a8dd5090-a1f0-4f22-ae17-0a56cc66dd0b/)**
 
 ## Other Practice Repos
 | Node | React | Angular |
