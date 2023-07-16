@@ -1,12 +1,27 @@
-# GraphQL Practice
+# <img src="https://cdn.simpleicons.org/graphql" title="GraphQL Practice Repo" alt="GraphQL Practice Repo" width="30"> GraphQL Practice
 Repository created to record my practice learning GraphQL with exercises based on the [Udemy Course](https://www.udemy.com/course/graphql-bootcamp) of [Andrew Mead](https://www.udemy.com/user/andrewmead/) and [Apollo GraphQL - Fullstack Tutorial](https://www.apollographql.com/docs/tutorial/introduction/).
 
+## Table of contents
+- [Status](#status)
+- [Requirements](#requirements)
+- [Repo structure](#repo-structure)
+- [Setup](#setup)
+- [What did I learn](#what-did-i-learn)
+- [Other practice repos](#other-practice-repos)
+
+## Status
+- Current repo's version is ![GraphQL practice version](https://img.shields.io/github/package-json/v/nicolasomar/graphql-practice?color=success&label=%20&style=flat-square)
+- **This course has been completed on 26/01/2022 - [Certificate](https://www.udemy.com/certificate/UC-a8dd5090-a1f0-4f22-ae17-0a56cc66dd0b/)**
+
+### Why it has not any updated dependencies?
+After finishing its related Udemy course, I archive this repository and unarchive it when I start a new training and add a link in the [`Other practice repos`](#other-practice-repos) section referring to its new repo. But I don't update any associated dependency due to technology changes during the years between each practice, and the produced code which works with the mentioned [`requirements`](#requirements).
+
 ## Requirements
- - [Node](https://nodejs.org/en/download/) v16.13.2 or above
- - A relational database (like PostgreSQL or MySQL, for example) (for `3-prisma`)
+ - [Node](https://nodejs.org/en/download/) `v16.13.2` or above
+ - A relational database (like `PostgreSQL` or `MySQL`, for example) (for `3-prisma`)
  - [pgAdmin](https://www.pgadmin.org/) or any relational database client (for `3-prisma`)
 
-## Repo Structure
+## Repo structure
  - `1-exercises`: Exercises related to [Andrew's course](https://www.udemy.com/course/graphql-bootcamp).
  - `2-apollo`: Server and Client projects from [Apollo's Tutorial](https://www.apollographql.com/docs/tutorial/introduction/) to understand an end to end implementation.
  - `3-prisma`: [Prisma](https://www.prisma.io/) learning and integration with a GraphQL server.
@@ -57,10 +72,7 @@ npm run setup-all
     - Create a fake database on the fly using [faker](https://www.npmjs.com/package/faker)
     - Build a site with pure HTML with [parcel](https://www.npmjs.com/package/parcel)
 
-## Version (currently v1.0.0)
-**This course has been completed on 26/01/2022 - [Certificate](https://www.udemy.com/certificate/UC-a8dd5090-a1f0-4f22-ae17-0a56cc66dd0b/)**
-
-## Other Practice Repos
+## Other practice repos
 | Node | React | Angular | Typescript | HTML & CSS |
 | :---: | :---: | :---: | :---: | :---: |
 | [<img src="https://cdn.simpleicons.org/node.js" title="Node Practice Repo" alt="Node Practice Repo" width="48px">](https://github.com/NicolasOmar/node-practice) | [<img src="https://cdn.simpleicons.org/react" title="React Practice Repo" alt="React Practice Repo" width="48px">](https://github.com/NicolasOmar/react-practice) | [<img src="https://cdn.simpleicons.org/angular" title="Angular Practice Repo" alt="Angular Practice Repo" width="48px">](https://github.com/NicolasOmar/angular-practice) | [<img src="https://cdn.simpleicons.org/typescript" title="Typescript Practice Repo" alt="Typescript Practice Repo" width="48px">](https://github.com/NicolasOmar/typescript-practice) | [<img src="https://cdn.simpleicons.org/html5" title="HTML and CSS Practice Repo" alt="HTML and CSS Practice Repo" width="48px">](https://github.com/NicolasOmar/html-css-practice) |
